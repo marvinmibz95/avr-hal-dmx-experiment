@@ -215,7 +215,7 @@ impl
             .ursel().set_bit() // sets the ucsrc instead of ubrrh (ubrrh and ucsrc share same location on ATmega8, see atmega8 datasheet)
             .umsel().usart_async()
             .ucsz().chr8()
-            .usbs().stop1()
+            .usbs().stop2()
             .upm().disabled()
         );
     }
@@ -294,7 +294,7 @@ impl
         self.ucsr1c.write(|w| w
             .umsel1().usart_async()
             .ucsz1().chr8()
-            .usbs1().stop1()
+            .usbs1().stop2()
             .upm1().disabled()
         );
     }
@@ -370,7 +370,7 @@ impl
         self.ucsr0c.write(|w| w
             .umsel0().usart_async()
             .ucsz0().chr8()
-            .usbs0().stop1()
+            .usbs0().stop2()
             .upm0().disabled()
         );
     }
